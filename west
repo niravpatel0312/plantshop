@@ -1,0 +1,51 @@
+<?php
+include("header.php");
+?>
+
+<div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center mt-5 text-success">
+                <h2>Contact Us</h2>
+            </div>
+        </div>
+
+        <div class="row my-5">
+            <div class="col-md-4">
+                 <div class="card bg-success" style="width: 100%;">
+                <div class="card-body text-center text-white">
+                    <h5 class="card-title">Address</Address></h5>
+                    
+                    <p class="card-text text-center">
+                        PD-farm & Nursery Bhomapardi Dharampur Road,Valsad
+                    </p>
+                </div>
+</div>
+            </div><div class="col-md-4">
+                 <div class="card bg-success" style="width: 100%;">
+                <div class="card-body text-center text-white">
+                    <h5 class="card-title">Mobile No</Address></h5>
+                    
+                    <p class="card-text text-center">
+                       9426220531  | 7046975115
+                    </p>
+                </div>
+</div>
+            </div>
+            <div class="col-md-4 mb-5">
+
+            <div class="card bg-success" style="width: 100%;">
+                <div class="card-body text-center text-white">
+                    <h5 class="card-title">Email id</h5>
+                    
+                    <p class="card-text text-center">admin@plantshop.com</p>
+                    
+                </div>
+</div>
+            </div>
+
+        </div>
+</div>
+
+<?php
+include("footer.php");
+?>

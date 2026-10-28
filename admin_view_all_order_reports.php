@@ -1,0 +1,62 @@
+<?php
+session_start();
+include("admin_header.php");
+include("connect.php");
+?>
+
+<div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center mt-5 text-success">
+                <h1>VIEW ALL ORDER REPORTS</h1>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+           
+            
+             <div class="col-md-12">
+                <?php
+                
+                $res3=mysqli_query($con,"select * from order_detail ");
+                if(mysqli_num_rows($res3)>0){
+                    echo"<table class='table table-bordered'>
+                        <tr>
+                            <th>ORDER ID</th>
+                            <th>ORDER DATE</th>
+                            <th>CART ID</th> 
+                            <th>CUSTOMER NAME</th>  
+                            <th>DELEVIRY ADDRESS</th> 
+                            <th>DELEVIRY MOBILE NO</th>                                                                       
+                            <th>AMOUNT</th>
+                            <th>VIEW ORDER DETAIL</th>
+                        </tr>";
+                        while($r3=mysqli_fetch_array($res3))
+                        {
+                            echo "<tr>";
+                          
+                            echo "<td>$r3[0]</td>";
+                            echo "<td>$r3[1]</td>";
+                            echo "<td>$r3[2]</td>";
+                            $res4=mysqli_query($con,"select * from cust_regis where cust_id='$r3[3]'");
+                            $r4=mysqli_fetch_array($res4);
+                            echo "<td>$r4[1]</td>";
+                            echo "<td>$r3[4]</td>"; 
+                            echo "<td>$r3[5]</td>";
+                            echo "<td>&#8377; $r3[6] /-</td>";
+                            echo "<td><a href='admin_view_order_detail.php?cid=$r3[2]'>VIEW ORDER DETAIL</a></td>";
+                            echo "<td><a href='admin_view_bill.php?oid=$r3[0]'>VIEW BILL</a></td>";
+                            echo "</tr>";
+                        }
+                        echo "</table>";
+                }else{
+                    echo "<h2>No Order Found</h2>";
+                }
+                ?>
+            </div>
+
+        </div>
+</div>
+
+<?php
+include("footer.php");
+?>
